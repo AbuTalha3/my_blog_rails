@@ -114,7 +114,11 @@ it will install the required gemfile for running the project
 <!-- AUTHORS -->
 
 ## 👥 Author <a name="author"></a>
+👤 **Abu Talha**
 
+- GitHub: [@Abu Talha](https://github.com/abutalha3)
+- Twitter: [@Abu Tallha](https://twitter.com/AbuTalha8T)
+- LinkedIn: [@Abu Talha](https://www.linkedin.com/in/abu-talha-najeeb-akhun-393b8b292/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,31 +1,6 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 <div align="center">
   <br/>
-  <h1><b>Blog App 📖</b></h1>
+  <h1><b>My_Blog_Rails 📖</b></h1>
 
 </div>
 
@@ -33,7 +8,7 @@ Things you may want to cover:
 
 ## 📗 Table of Contents
 
-- [📖 Blog App ](#-catalog-)
+- [📖 My_Blog_Rails ](#-catalog-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -50,9 +25,9 @@ Things you may want to cover:
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog App <a name="about-project"></a>
+# 📖 My_Blog_Rails <a name="about-project"></a>
 
-**Blog App** is a web application built using Ruby on Rails and PostgreSQL to manage blog posts, comments, likes, and user profiles.
+**My_Blog_Rails** is a web application built using Ruby on Rails and PostgreSQL to manage blog posts, comments, likes, and user profiles.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -94,7 +69,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```bash
-  git clone 
+  git clone git@github.com:AbuTalha3/my_blog_rails.git
 ```
 
 ### Install
@@ -136,7 +111,7 @@ it will install the required gemfile for running the project
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/AbuTalha3/my_blog_rails/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

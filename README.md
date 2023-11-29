@@ -94,7 +94,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```bash
-  git clone https://github.com/tajulafreen/Blog-app.git
+  git clone 
 ```
 
 ### Install

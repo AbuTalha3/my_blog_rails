@@ -7,11 +7,7 @@ node_modules
 
 # Ignore bundler config.
 /.bundle
-
-# Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
-
+node_modules/
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -23,7 +19,7 @@ node_modules
 !/tmp/pids/
 !/tmp/pids/.keep
 
-# Ignore storage (uploaded files in development and any SQLite databases).
+# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
 /tmp/storage/*
@@ -34,3 +30,6 @@ node_modules
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore the database.yml file as we have different password setup on different machine
+/config/database.yml

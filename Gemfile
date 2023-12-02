@@ -57,7 +57,7 @@ group :development, :test do
   gem 'webdrivers', '5.3.1'
 end
 
-group :development do  
+group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 

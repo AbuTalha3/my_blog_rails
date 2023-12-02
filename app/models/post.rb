@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  
+
   after_create :update_user_posts_counter
 
   def most_recent_comments

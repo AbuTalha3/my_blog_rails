@@ -30,8 +30,6 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
-gem 'devise'
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -59,7 +57,7 @@ group :development, :test do
   gem 'webdrivers', '5.3.1'
 end
 
-group :development do
+group :development do  
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 

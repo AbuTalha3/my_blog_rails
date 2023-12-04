@@ -60,7 +60,7 @@ In order to run this project you need:
 ```
     ruby on rails
     ruby
-    postgreSQL
+    PostgreSQL
     bundler
 ```
 

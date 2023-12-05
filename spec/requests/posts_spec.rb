@@ -1,18 +1,18 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request do
-  describe "GET /index" do
-    it "should be succesful response" do
+RSpec.describe 'Posts', type: :request do
+  describe 'GET /index' do
+    it 'should be succesful response' do
       get '/users/id/posts'
       expect(response).to have_http_status(200)
     end
 
-    it "should render the posts index file" do
+    it 'should render the posts index file' do
       get '/users/id/posts'
       expect(response).to render_template(:index)
     end
 
-    it "should include the placeholder" do
+    it 'should include the placeholder' do
       get '/users/id/posts'
       expect(response.body).to include('Here is the posts index page!')
     end

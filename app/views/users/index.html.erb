@@ -1,1 +1,15 @@
-<h1>Here is the users index page!</h1>
+<section id="body-content" class="container">
+  <% @users.each do |user| %>
+    <div class="row mt-3">
+      <div class="col-lg-2">
+        <%= image_tag("default.jpg", alt: "Default", style: "width: 50%;") %>
+      </div>
+      <div class="col-lg-6 border border-dark d-flex align-items-center">
+        <div class="user-lists w-100">
+          <h2 class="text-dark"><%= link_to user.name, user_path(user) %></h2>
+          <p class="d-flex justify-content-end">Number Of posts <%= user.posts_counter %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>

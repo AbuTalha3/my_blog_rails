@@ -1,1 +1,23 @@
-<h1>Here is the posts index page!</h1>
+<section class="container">
+    <%= render partial: 'shared/user', locals: { user: @user } %>
+    <% @post.each do |post| %>  
+        <div class="row mt-4">
+            <div class="col-lg-10 border border-dark">
+                <h4 class="pt-2"><%= link_to post.title, user_post_path(@user, post), class: "text-dark" %></h4>
+                <p class="mt-2"><%= truncate(post.text, length: 200, omission: '...') %></p>
+                <p class="d-flex justify-content-end">Comments <%= post.comments_counter %>, Likes <%= post.likes_counter%></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 border border-dark">
+                <% post.comments.each do |comment| %>
+                    <p class="">
+                      <%= comment.user.name %>: <%= comment.text %> </p>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    <div class="col-lg-10 text-center">
+    <p class="row mt-4 btn btn-primary justify-content-center">Pagination</p>
+    </div>
+</section>

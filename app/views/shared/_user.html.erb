@@ -1,0 +1,11 @@
+<div class="row mt-4">
+    <div class="col-lg-2">
+        <%= image_tag("default.jpg", alt: "Default", style: "width: 70%;") %>
+    </div>
+    <div class="col-lg-8 border border-dark d-flex align-items-center">
+        <div class="user-lists w-100">
+            <h2 class="text-dark"><%= @user.name %></h2>
+            <p class="d-flex justify-content-end">Number of Posts <%= @user.posts_counter %></p>
+        </div>
+    </div>
+</div>

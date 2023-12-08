@@ -1,4 +1,5 @@
 <section id="body-content" class="container">
+  <%= link_to "Create New Post", new_user_post_path(current_user), class: "btn btn-primary" %>
   <% @users.each do |user| %>
     <div class="row mt-3">
       <div class="col-lg-2">

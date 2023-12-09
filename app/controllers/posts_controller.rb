@@ -26,9 +26,6 @@ class PostsController < ApplicationController
     end
   end
 
-  t.integer :comments_counter, default: 0
-  t.integer :likes_counter, default: 0
-
   private
 
   def post_params

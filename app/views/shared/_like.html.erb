@@ -1,4 +1,0 @@
-<%= form_with(url: user_post_likes_path(@user, post), method: :post) do |form| %>
-  <%= form.hidden_field :post_id, value: post.id %>
-  <%= form.submit "Like", class: "btn btn-primary" %>
-<% end %>

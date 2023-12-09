@@ -5,6 +5,11 @@
             <p class="mt-2"><%= @post.text %></p>
         </div>
     </div>
+    <p>Comments <%= @post.comments_counter %>, Likes <%= @post.likes_counter%></p>
+    <%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class:"text-primary" %>
+    <%= form_with url: user_post_likes_path(@post.author_id, @post), method: :post, local: true do |f| %>
+        <%= f.submit "Like Post" , class: "btn btn-primary" %>
+      <% end %>
     <div class="row">
         <div class="col-lg-10 border border-dark">
             <% @comments.each do |comment| %>
@@ -12,4 +17,5 @@
             <% end %>
         </div>
     </div>
+    
 </section>

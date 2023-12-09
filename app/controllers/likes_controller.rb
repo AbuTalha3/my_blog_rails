@@ -1,17 +1,8 @@
 class LikesController < ApplicationController
   def create
-    logger.debug(params)
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
-    @like = @post.likes.build
-    @like.user_id = current_user
-
-    flash[:notice] = if @like.save
-                       'Liked the post'
-                     else
-                       'Error Liking the post'
-                     end
-
+    @post = Post.find_by(id: params[:post_id])
+    @user = User.find_by(id: params[:user_id])
+    @like = @post.likes.create!(user: current_user, post: @post)
     redirect_to user_post_path(@user, @post)
   end
 end

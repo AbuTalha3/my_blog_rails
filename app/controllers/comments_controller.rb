@@ -1,24 +1,24 @@
 class CommentsController < ApplicationController
   def new
-    @user = Post.find_by_id(params[:user_id])
+    @user = current_user
     @post = Post.find_by_id(params[:post_id])
     @comment = Comment.new
   end
 
   def create
     @user = current_user
-    @comment = @user.Comments.build(comment_params)
-    comment.post_id = params[:post_id]
+    @comment = current_user.comments.build(comment_params)
+    @comment.post_id = params[:post_id]
+    @post = Post.find_by(id: params[:post_id])
 
     if @comment.save
       flash[:success] = 'Comment created successfully'
+      redirect_to user_post_path(@user, @post)
     else
       flash[:error] = 'Comment not created successfully'
       puts @comment.errors.full_messages
       render :new
     end
-
-    redirect_to users_post_path(params[:user_id], @comment.post_id)
   end
 
   def comment_params

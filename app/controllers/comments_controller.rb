@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment = @user.Comments.build(comment_params)
     comment.post_id = params[:post_id]
 
-    if @comment.after_save
+    if @comment.save
       flash[:success] = 'Comment created successfully'
     else
       flash[:error] = 'Comment not created successfully'

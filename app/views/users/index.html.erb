@@ -2,7 +2,7 @@
   <% @users.each do |user| %>
     <div class="row mt-3">
       <div class="col-lg-2">
-        <%= image_tag("default.jpg", alt: "Default Pic", style: "width: 60%;") %> 
+        <%= image_tag user.photo, alt: "Default Pic", style: "width: 60%" %> 
       </div>
       <div class="col-lg-6 border border-dark d-flex align-items-center">
         <div class="user-lists w-100">

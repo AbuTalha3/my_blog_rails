@@ -22,9 +22,11 @@ class PostsController < ApplicationController
       redirect_to user_posts_path, notice: 'Post was successfully created'
     else
       flash.now[:alret] = 'Error creating post'
-      render.new
+      post.render.new
     end
   end
+
+  private
 
   def post_params
     params.require(:post).permit(:title, :body, :user_id)

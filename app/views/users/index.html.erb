@@ -1,5 +1,4 @@
 <section id="body-content" class="container">
-  <%= link_to "Create New Post", new_user_post_path(current_user), class: "btn btn-primary" %>
   <% @users.each do |user| %>
     <div class="row mt-3">
       <div class="col-lg-2">
@@ -9,6 +8,8 @@
         <div class="user-lists w-100">
           <h2 class="text-dark"><%= link_to user.name, user_path(user) %></h2>
           <p class="d-flex justify-content-end">Number Of posts <%= user.posts_counter %></p>
+          
+          <%= link_to "Create New Post", new_user_post_path(user), class: "btn btn-primary mt-2" %>
         </div>
       </div>
     </div>

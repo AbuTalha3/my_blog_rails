@@ -3,14 +3,19 @@
         <div class="col-lg-10 border border-dark">
             <h4 class="pt-2">'<%= @post.title %>' by <%= @user.name %></h4>
             <p class="mt-2"><%= @post.text %></p>
-            <p class="d-flex justify-content-end">Comments <%= @post.comments_counter %>, Likes <%= @post.likes_counter %></p>
         </div>
     </div>
+    <p>Comments <%= @post.comments_counter %>, Likes <%= @post.likes_counter%></p>
+    <%= link_to "Add Comment", new_user_post_comment_path(@user, @post), class:"text-primary" %>
+    <%= form_with url: user_post_likes_path(@post.author_id, @post), method: :post, local: true do |f| %>
+        <%= f.submit "Like Post" , class: "btn btn-primary" %>
+      <% end %>
     <div class="row">
         <div class="col-lg-10 border border-dark">
             <% @comments.each do |comment| %>
-                <p><%= comment.author.name %>: <%= comment.text %> </p>
+                <p><%= comment.user.name %>: <%= comment.text %> </p>
             <% end %>
         </div>
     </div>
+    
 </section>

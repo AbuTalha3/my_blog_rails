@@ -3,10 +3,15 @@ require 'rails_helper'
 RSpec.describe 'Post Index', type: :feature do
   let(:user) { User.new(name: 'Abu', photo: 'https://th.bing.com/th/id/OIP.NqY3rNMnx2NXYo3KJfg43gAAAA?rs=1&pid=ImgDetMain', bio: 'an autor in poland') }
   let(:post) { Post.new(title: 'post title', text: 'post text', author: user) }
-  before {user.save}
-  before {post.save}
- 
+  before { user.save }
+  before { post.save }
+
   describe 'Index page' do
+    before { visit user_posts_path(user) }
+    it 'shows the user name' do
+      expect(page).to have_content('user.name')
+    end
+
     it "should display the user's profile picture" do
       visit user_posts_path(@user1)
       expect(page).to have_css("img[src*='https://th.bing.com/th/id/OIP.NqY3rNMnx2NXYo3KJfg43gAAAA?rs=1&pid=ImgDetMain']")

@@ -1,6 +1,11 @@
 <div class="row mt-4">
     <div class="col-lg-2">
-        <%= image_tag user.photo, alt: "Default Pic", style: "width: 60%" %>
+        <% if user.photo.present? %>
+            <%= image_tag user.photo, alt: "User's Profile Pic", style: "width: 60%" %>
+        <% else %>
+            <!-- Provide a default image or placeholder if user.photo is nil -->
+            <%= image_tag "https://th.bing.com/th/id/OIP.w6Cs6qz234c71XloeqKdwgHaHa?rs=1&pid=ImgDetMain", alt: "Default Pic", style: "width: 60%" %>
+        <% end %>
     </div>
     <div class="col-lg-8 border border-dark d-flex align-items-center">
         <div class="user-lists w-100">

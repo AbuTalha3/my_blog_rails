@@ -24,7 +24,7 @@ RSpec.describe 'Post Show', type: :feature do
 
     it "should display the post's number of comments and likes" do
       visit "/users/#{@user1.id}/posts/#{@post1.id}"
-      user_post = @user1.posts.find_by(id: @post1)
+      @user1.posts.find_by(id: @post1)
       expect(page).to have_content(@post1.comments.count)
       expect(page).to have_content(@post1.likes.count)
     end

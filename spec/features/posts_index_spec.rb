@@ -57,7 +57,7 @@ RSpec.describe 'Post Index', type: :feature do
       click_link @post1.title
       expect(page).to have_current_path(user_post_path(@user1, @post1))
     end
-   
+
     it 'should display the pagination section when there are more posts than fit on the view' do
       visit user_posts_path(@user1)
       click_link @post1.title

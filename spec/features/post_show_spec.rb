@@ -22,15 +22,10 @@ RSpec.describe 'Post Show', type: :feature do
       expect(page).to have_content(@user1.name)
     end
 
-    it "should display the post's number of comments" do
-      # visit user_posts_path(@user1, @post1)
+    it "should display the post's number of comments and likes" do
       visit "/users/#{@user1.id}/posts/#{@post1.id}"
       user_post = @user1.posts.find_by(id: @post1)
       expect(page).to have_content(@post1.comments.count)
-    end
-
-    it "should display the post's number of likes" do
-      visit user_posts_path(@user1, @post1)
       expect(page).to have_content(@post1.likes.count)
     end
 

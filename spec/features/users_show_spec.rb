@@ -33,10 +33,17 @@ RSpec.describe 'User Show', type: :feature do
       expect(page).to have_content('Second text')
       expect(page).to have_content('Third text')
     end
+
     it 'should have the button to display all posts' do
       visit user_path(@user1)
       expect(page).to have_content('View All Posts')
     end
+
+    it 'should redirect to the post show page when clicking on a post' do
+      visit user_path(@user1)
+      expect(page).to have_content('First text')
+    end
+
     it "should redirect me to the user's post's index page when clicking on the 'View All Posts' button" do
       visit user_path(@user1)
       click_link 'View All Posts'

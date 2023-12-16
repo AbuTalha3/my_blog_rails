@@ -1,20 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Index', type: :feature do
-  let(:user) { User.new(name: 'Abu', photo: 'https://th.bing.com/th/id/OIP.NqY3rNMnx2NXYo3KJfg43gAAAA?rs=1&pid=ImgDetMain', bio: 'an autor in poland') }
-  let(:post) { Post.new(title: 'post title', text: 'post text', author: user) }
-  before { user.save }
-  before { post.save }
-
+  before :each do
+    @user1 = User.create!(name: 'Abu', photo: 'https://unsplash.com/photos/1.jpg', bio: 'Teacher from Mexico.')
+    @post1 = Post.create!(author: @user1, title: 'First Post', text: 'First text')
+    @post2 = Post.create!(author: @user1, title: 'Second Post', text: 'Second text')
+    @comment1 = Comment.create!(post: @post1, user: @user1, text: 'Hi Abu!')
+    @comment2 = Comment.create!(post: @post1, user: @user1, text: 'Hi Abu!')
+    @like1 = Like.create!(post: @post1, user: @user1)
+    @like2 = Like.create!(post: @post1, user: @user1)
+  end
   describe 'Index page' do
-    before { visit user_posts_path(user) }
-    it 'shows the user name' do
-      expect(page).to have_content('user.name')
-    end
-
     it "should display the user's profile picture" do
       visit user_posts_path(@user1)
-      expect(page).to have_css("img[src*='https://th.bing.com/th/id/OIP.NqY3rNMnx2NXYo3KJfg43gAAAA?rs=1&pid=ImgDetMain']")
+      expect(page).to have_css("img[src*='https://unsplash.com/photos/1.jpg']")
     end
 
     it "should display the user's username" do
@@ -45,12 +44,12 @@ RSpec.describe 'Post Index', type: :feature do
 
     it 'should display the number of comments on a post' do
       visit user_posts_path(@user1)
-      expect(page).to have_content(@post1.comment_counter)
+      expect(page).to have_content(@post1.comments_counter)
     end
 
     it 'should display the number of likes on a post' do
       visit user_posts_path(@user1)
-      expect(page).to have_content(@post1.like_counter)
+      expect(page).to have_content(@post1.likes_counter)
     end
 
     it "should redirect me to that post's show page when clicking on the post's title" do

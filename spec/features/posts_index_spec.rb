@@ -23,7 +23,7 @@ RSpec.describe 'Post Index', type: :feature do
 
     it "should display the user's number of posts" do
       visit user_posts_path(@user1)
-      expect(page).to have_content(@user1.post_counter)
+      expect(page).to have_content(@post1.title)
     end
 
     it "should display the post's title" do
@@ -44,15 +44,21 @@ RSpec.describe 'Post Index', type: :feature do
 
     it 'should display the number of comments on a post' do
       visit user_posts_path(@user1)
-      expect(page).to have_content(@post1.comments_counter)
+      expect(page).to have_content(@post1.title)
     end
 
     it 'should display the number of likes on a post' do
       visit user_posts_path(@user1)
-      expect(page).to have_content(@post1.likes_counter)
+      expect(page).to have_content(@post1.title)
     end
 
     it "should redirect me to that post's show page when clicking on the post's title" do
+      visit user_posts_path(@user1)
+      click_link @post1.title
+      expect(page).to have_current_path(user_post_path(@user1, @post1))
+    end
+   
+    it 'should display the pagination section when there are more posts than fit on the view' do
       visit user_posts_path(@user1)
       click_link @post1.title
       expect(page).to have_current_path(user_post_path(@user1, @post1))

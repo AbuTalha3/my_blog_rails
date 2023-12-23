@@ -27,7 +27,7 @@
 
 # 📖 My_Blog_Rails <a name="about-project"></a>
 
-**My_Blog_Rails** is a web Application built using Ruby on Rails and `PostgreSQL` to manage blog posts, comments, likes, and user profiles.
+**My_Blog_Rails** is a web Application built using `Ruby on Rails` and `PostgreSQL` to manage blog posts, comments, likes, and user profiles.
 
 ## 🛠 Built With <a name="built-with"></a>
 
